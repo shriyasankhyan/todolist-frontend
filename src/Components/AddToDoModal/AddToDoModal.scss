@@ -1,0 +1,63 @@
+.addTodo{
+    max-width: 60vw;
+    border: none;
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgb(187, 184, 184) 0px 0px 5px 5px;
+    input{
+        border-radius: 5px;
+        margin: 10px 0px;
+        height: 40px;
+        font-size: large;
+    }
+    textarea{
+        border-radius: 5px;
+        margin: 10px 0px;
+        font-size: large;
+    }
+    button{
+        border-radius: 4px;
+        border: none;
+        margin: 10px 10px 0px 0px;
+        padding: 15px 30px;
+        color: white;
+        font-size: medium;
+        box-shadow: 1px 1px 1px 1px rgb(167, 162, 162);
+        cursor: pointer;
+        font-weight: 600;
+    }
+}
+
+::placeholder{
+    margin-left: 15px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.addButton{
+    background-color: green;
+}
+
+.cancelButton{
+    background-color: red;
+}
+
+.closeButton{
+    cursor: pointer;
+}
+
+.modalTitle{
+    display: flex;
+    justify-content: space-between;
+    height:60px;
+    align-items: center;
+    margin-bottom: 30px;
+    h2{
+        font-size: 30px;
+        font-weight: 600;
+    }
+}

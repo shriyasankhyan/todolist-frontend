@@ -1,0 +1,14 @@
+.titleUser{
+    display: flex;
+    border: 2px solid gray;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10vw;
+    button{
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+        background-color: green;
+        border: none;
+    }
+}
