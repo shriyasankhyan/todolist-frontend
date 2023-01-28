@@ -1,0 +1,37 @@
+body{
+    font-size: xx-large;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+}
+
+.heading{
+    text-align: center;
+    color: brown;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label{
+    margin-left: 2%;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input{
+    margin: 5px 5px;
+    padding: 5px 5px;
+    font-size: xx-large;
+}
+
+.submit-btn{
+    color: beige;
+    background-color: brown;
+}
