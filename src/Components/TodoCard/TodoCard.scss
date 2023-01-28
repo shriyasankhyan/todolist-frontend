@@ -1,0 +1,35 @@
+.todo-card{
+    box-shadow: 1px 1px 1px 1px rgb(167, 162, 162);
+    padding: 10px 20px;
+    margin: 30px 0px;
+    border-radius: 5px;
+}
+
+.todo-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+        margin-left: 10px;
+    }
+    button{
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+}
+
+.todo-title{
+    span{
+        font-size: 30px;
+        font-weight: 500;
+        margin-left: 10px;
+        align-items: center;
+    }
+    button{
+        background: none;
+        cursor: pointer;
+        padding: 0px;
+    }
+}

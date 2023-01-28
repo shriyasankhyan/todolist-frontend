@@ -1,22 +1,31 @@
-.addTodo{
-    max-width: 60vw;
+.addTodo-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 40vw;
+    min-height: 100vh;
+    z-index: 100;
+    box-shadow: rgb(187, 184, 184) 0px 0px 5px 5px;
     border: none;
     border-radius: 5px;
-    margin: 50px auto;
+}
+
+.addTodo{
     padding: 40px;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: rgb(187, 184, 184) 0px 0px 5px 5px;
     input{
         border-radius: 5px;
         margin: 10px 0px;
-        height: 40px;
+        height: 50px;
         font-size: large;
     }
     textarea{
         border-radius: 5px;
-        margin: 10px 0px;
+        margin: 0px 0px;
         font-size: large;
     }
     button{
@@ -26,9 +35,11 @@
         padding: 15px 30px;
         color: white;
         font-size: medium;
-        box-shadow: 1px 1px 1px 1px rgb(167, 162, 162);
         cursor: pointer;
         font-weight: 600;
+        &:hover{
+            box-shadow: none;
+        }
     }
 }
 
@@ -40,10 +51,16 @@
 
 .addButton{
     background-color: green;
+    &:hover{
+        background-color: rgb(2, 73, 2);
+    }
 }
 
 .cancelButton{
     background-color: red;
+    &:hover{
+        background-color: rgb(143, 6, 6);
+    }
 }
 
 .closeButton{
@@ -61,3 +78,9 @@
         font-weight: 600;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .addTodo-container{
+        width: 100vw;
+    }
+  }

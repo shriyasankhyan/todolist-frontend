@@ -1,6 +1,6 @@
-.titleUser{
+.title-user{
     display: flex;
-    border: 2px solid gray;
+    border-bottom: 2px solid gray;
     align-items: center;
     justify-content: space-between;
     padding: 15px 10vw;
@@ -10,5 +10,16 @@
         color: white;
         background-color: green;
         border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: medium;
+        &:hover{
+            background-color: rgb(1, 82, 1);
+        }
     }
+}
+
+.todo-container{
+    padding: 5% 10%;
+    z-index: 0;
 }
