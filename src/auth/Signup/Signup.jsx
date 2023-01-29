@@ -21,7 +21,7 @@ const Signup = () => {
   }
 
   return (
-    <div className={styles.app}>
+    <div className='auth-page'>
       <Header title="Signup"/>
       <form className="login-form" onSubmit={handleSubmit}>
         <div className='form-field'>
