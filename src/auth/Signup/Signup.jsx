@@ -22,7 +22,8 @@ const Signup = () => {
 
   return (
     <div className='auth-page'>
-      <Header title="Signup"/>
+      <div className='signup-container'>
+   <Header title="Signup"/>
       <form className="login-form" onSubmit={handleSubmit}>
         <div className='form-field'>
           <label className='form-label' >Enter your name</label>
@@ -50,6 +51,8 @@ const Signup = () => {
        </div>
         <input  type="submit" className='submit-btn login-input' />
       </form>
+      </div>
+   
     </div>
   )
 }
