@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { XSquare } from 'react-feather'
+import API from '../../utils/API';
 import './AddToDoModal.scss'
 
 const AddModal = ({open, setOpen}) => {
   //** states
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [deadline, setDeadline] = useState('')
+  const [deadline, setDeadline] = useState('');
+  const [status, setStatus] = useState(false);
 
   // ** Function for handling add todo
     const handleSubmit = () => {
@@ -17,6 +19,21 @@ const AddModal = ({open, setOpen}) => {
         else{
           window.alert('All the fields are required.')
         }
+
+        const todo ={
+          title: title,
+          description: description,
+          iscompleted: status,
+          deadline: deadline,
+        }
+
+        API("post", "todo", todo)
+        .then((response) => {
+          console.log(response)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     }
 
   // ** Function for handling cancellation
