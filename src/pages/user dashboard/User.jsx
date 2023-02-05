@@ -1,18 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AddModal from '../../Components/AddToDoModal/AddToDoModal';
 import TodoCard from '../../Components/TodoCard/TodoCard';
-import { data } from '../../data/sampleTodosData';
+import API from '../../utils/API';
 import './User.scss'
 
 const User = ({username}) => {
   // ** states
   const [open, setOpen] = useState(false);
+  const [data, setData] = useState([]);
 
   // ** Function for handling modal
   const handleModal = () => {
     setOpen(!open);
-    console.log('clicked')
   }
+
+  useEffect(() => {
+    API("get", "todos")
+    .then((response) => {
+      console.log(response);
+      setData(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }, [])
+  
 
   return (
     <>
@@ -23,8 +35,8 @@ const User = ({username}) => {
       <div className='todo-container'>
         <h4>Your recent activity</h4>
         <div className='todos'>
-          {data.map(({id, title, description, status, date}) => (
-            <TodoCard key={id} title={title} description={description} status={status} date={date} />
+          {data.map(({id, title, description, iscompleted, deadline}) => (
+            <TodoCard key={id} title={title} description={description} status={iscompleted} date={deadline} />
           ))}
         </div>
       </div>

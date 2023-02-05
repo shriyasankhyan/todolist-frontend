@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const ROOTURL = "https://msm.techelectron.com/"
+const ROOTURL = "http://127.0.0.1:8000/api/"
 
 // defining method
 const get = (path) => {

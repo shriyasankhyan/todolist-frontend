@@ -8,26 +8,17 @@ const AddModal = ({open, setOpen}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [deadline, setDeadline] = useState('');
-  const [status, setStatus] = useState(false);
 
   // ** Function for handling add todo
     const handleSubmit = () => {
-        console.log('Task added')
-        if(title.length > 0 && description.length > 0){
-          window.alert(title + description)
-        }
-        else{
-          window.alert('All the fields are required.')
-        }
-
         const todo ={
           title: title,
           description: description,
-          iscompleted: status,
+          iscompleted: false,
           deadline: deadline,
         }
 
-        API("post", "todo", todo)
+        API("post", "todos/", todo)
         .then((response) => {
           console.log(response)
         })
@@ -49,7 +40,7 @@ const AddModal = ({open, setOpen}) => {
       open ?
       (
       <div className='addTodo-container'>
-        <form className='addTodo' onSubmit={handleSubmit}>
+        <form className='addTodo'>
         <div className='modalTitle'>
             <h2>Add To Do</h2>
             <div className='closeButton' onClick={() => handleModal()}><XSquare /></div>
@@ -58,8 +49,8 @@ const AddModal = ({open, setOpen}) => {
         <input type="date" placeholder="Deadline" onChange={(e) => setDeadline(e.target.value)} />
         <textarea rows='8' cols='50' placeholder="Description" onChange={(e) => setDescription(e.target.value)}></textarea>
         <div>
-            <button className='addButton' type='submit'>Add</button>
-            <button className='cancelButton' onClick={() => handleModal()}>Cancel</button>
+            <button type='button' className='addButton' onClick={() => handleSubmit()}>Add</button>
+            <button type='button' className='cancelButton' onClick={() => handleModal()}>Cancel</button>
         </div>
       </form>
       </div>
