@@ -14,7 +14,7 @@ const AddModal = ({open, setOpen}) => {
         const todo ={
           title: title,
           description: description,
-          iscompleted: false,
+          isComplete: true,
           deadline: deadline,
         }
 
@@ -25,6 +25,7 @@ const AddModal = ({open, setOpen}) => {
         .catch((error) => {
           console.log(error)
         })
+        window.alert("Todo created successfully !!")
     }
 
   // ** Function for handling cancellation
@@ -40,7 +41,7 @@ const AddModal = ({open, setOpen}) => {
       open ?
       (
       <div className='addTodo-container'>
-        <form className='addTodo'>
+        <form className='addTodo' onSubmit={() => handleSubmit()}>
         <div className='modalTitle'>
             <h2>Add To Do</h2>
             <div className='closeButton' onClick={() => handleModal()}><XSquare /></div>
@@ -49,7 +50,7 @@ const AddModal = ({open, setOpen}) => {
         <input type="date" placeholder="Deadline" onChange={(e) => setDeadline(e.target.value)} />
         <textarea rows='8' cols='50' placeholder="Description" onChange={(e) => setDescription(e.target.value)}></textarea>
         <div>
-            <button type='button' className='addButton' onClick={() => handleSubmit()}>Add</button>
+            <button type='submit' className='addButton'>Add</button>
             <button type='button' className='cancelButton' onClick={() => handleModal()}>Cancel</button>
         </div>
       </form>

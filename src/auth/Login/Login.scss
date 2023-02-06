@@ -24,6 +24,15 @@
 .form-field{
     display: flex;
     flex-direction: column;
+    a{
+        color: brown;
+        font-size: x-large;
+        text-decoration: none;
+    }
+    p{
+        font-size: x-large;
+        margin-left: 10px;
+    }
 }
 
 .form-label{

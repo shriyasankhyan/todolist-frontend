@@ -1,19 +1,37 @@
 import React, {useState} from 'react'
-import styles from './Signup.scss';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
+import API from '../../utils/API';
+import './Signup.scss';
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit() {
     if (password !== confirmPassword) {
       window.alert("Passwords do not match");
     } else {
       if (name.length > 0 && email.length > 0 && password.length > 0 && confirmPassword.length > 0) {
-        window.alert("Submitted");
+        const user = {
+          name: name,
+          email: email,
+          password: password,
+          password2: confirmPassword,
+          tc: false,
+        }
+        API("post", "user/register/", user)
+        .then((response) => {
+          console.log(response)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+        window.alert("Registered successfully !!");
+        navigate('/user')
       } else {
         window.alert("Please fill all the fields.")
       }
@@ -49,7 +67,7 @@ const Signup = () => {
           setConfirmPassword(e.target.value)
         }}/>
        </div>
-        <input  type="submit" className='submit-btn login-input' />
+        <input className='submit-btn login-input' type='submit' />
       </form>
       </div>
    

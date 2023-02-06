@@ -9,6 +9,7 @@
     box-shadow: rgb(187, 184, 184) 0px 0px 5px 5px;
     border: none;
     border-radius: 5px;
+    animation: slide 2s ease-in-out 1s 1;
 }
 
 .addTodo{
@@ -76,6 +77,15 @@
     h2{
         font-size: 30px;
         font-weight: 600;
+    }
+}
+
+@keyframes slide {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(100);
     }
 }
 

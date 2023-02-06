@@ -14,7 +14,7 @@ const TodoCard = (props) => {
               <span>{props.title}</span>
             </div>
             <div className='todo-status'>
-              <button>{props.status? 'completed' : 'pending'}</button>
+              <button style={{backgroundColor: props.status ? '#8DFD9A' : '#FD978D', color: 'white'}}>{props.status? 'completed' : 'pending'}</button>
               <span>{props.date}</span>
             </div>
           </div>
