@@ -35,8 +35,8 @@ const User = ({username}) => {
       <div className='todo-container'>
         <h4>Your recent activity</h4>
         <div className='todos'>
-          {data.map(({id, title, description, iscompleted, deadline}) => (
-            <TodoCard key={id} title={title} description={description} status={iscompleted} date={deadline} />
+          {data.map(({id, title, description, isComplete, deadline}) => (
+            <TodoCard key={id} title={title} description={description} status={isComplete} date={deadline} />
           ))}
         </div>
       </div>

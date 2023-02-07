@@ -20,7 +20,7 @@ const TodoCard = (props) => {
           </div>
           {
             openTodo ? 
-            (<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>)
+            (<p>{props.description}</p>)
             : null
           }
         </div>
