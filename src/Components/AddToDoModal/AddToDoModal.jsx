@@ -11,6 +11,7 @@ const AddModal = ({open, setOpen}) => {
 
   // ** Function for handling add todo
     const handleSubmit = () => {
+      // preventDefault();
         const todo ={
           title: title,
           description: description,
@@ -18,14 +19,19 @@ const AddModal = ({open, setOpen}) => {
           deadline: deadline,
         }
 
-        API("post", "todos/", todo)
-        .then((response) => {
-          console.log(response)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-        window.alert("Todo created successfully !!")
+        if(title.length>0 && description.length>0 && deadline.length>0){
+          API("post", "todos/", todo)
+          .then((response) => {
+            console.log(response)
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+          window.alert("Todo created successfully !!")
+        }
+        else{
+          window.alert("Fill all the fields")
+        }
     }
 
   // ** Function for handling cancellation

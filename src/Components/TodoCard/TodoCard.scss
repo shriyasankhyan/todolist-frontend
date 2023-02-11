@@ -33,3 +33,15 @@
         padding: 0px;
     }
 }
+
+.todo-status{
+    display: flex;
+    align-items: center;
+    button{
+        margin-left: 5px;
+    }
+}
+
+.description{
+    font-weight: 600;
+}
