@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import Header from "../../Components/Header/Header";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit() {
     if (email.length > 0 && password.length > 0) {
@@ -38,7 +40,7 @@ const Login = () => {
             />
           </div>
           <div className="form-field">
-            <p>Didn't have account <a href="/signup">Register now</a></p>
+            <p>Didn't have account <button onClick={() => navigate('/signup')}>Register now</button></p>
           </div>
           <input type="submit" className="submit-btn login-input" />
         </form>
