@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AddModal from '../../Components/AddToDoModal/AddToDoModal';
 import TodoCard from '../../Components/TodoCard/TodoCard';
 import API from '../../utils/API';
+// import { data } from '../../data/sampleTodosData';
 import './User.scss'
 
 const User = ({username}) => {

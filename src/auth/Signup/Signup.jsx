@@ -31,7 +31,7 @@ const Signup = () => {
           console.log(error)
         })
         window.alert("Registered successfully !!");
-        navigate('/user')
+        navigate('/')
       } else {
         window.alert("Please fill all the fields.")
       }

@@ -8,8 +8,8 @@ const DeleteModal = (props) => {
     }
 
     const handleDelete = () => {
-        console.log(props.idtoDelete);
-        API("delete", `todos/${props.idToDelete}`, {})
+        console.log(props.todoId);
+        API("delete", `todos/${props.todoId}`, {})
         .then((response) => {
             console.log(response);
         })

@@ -1,0 +1,23 @@
+.modal-container{
+    max-width: 40vw;
+}
+
+.button-group{
+    button{
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.update-button{
+    background-color: rgb(65, 204, 81);
+    color: white;
+}
+
+.cancel-button{
+    background-color: rgb(243, 242, 242);
+    margin-left: 10px;
+}
