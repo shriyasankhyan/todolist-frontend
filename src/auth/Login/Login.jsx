@@ -25,7 +25,9 @@ const Login = () => {
             );
 
             localStorage.setItem("userModel", JSON.stringify(data));
-            navigate('./user');
+            const userData = JSON.parse(localStorage.getItem("userModel")).token.access
+            console.log(userData)
+            navigate('/user');
         }
       } catch (err) {
         window.alert("Fill the correct details.");

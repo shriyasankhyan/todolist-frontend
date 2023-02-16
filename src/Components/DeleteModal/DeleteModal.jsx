@@ -9,9 +9,10 @@ const DeleteModal = (props) => {
 
     const handleDelete = () => {
         console.log(props.todoId);
-        API("delete", `todos/${props.todoId}`, {})
+        API("delete", `todos/${props.todoId}`)
         .then((response) => {
             console.log(response);
+            window.location.reload();
         })
         .catch((error) => {
             console.log(error);

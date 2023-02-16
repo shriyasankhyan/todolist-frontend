@@ -15,7 +15,7 @@ const AddModal = ({open, setOpen}) => {
         const todo ={
           title: title,
           description: description,
-          isComplete: true,
+          isComplete: false,
           deadline: deadline,
         }
 

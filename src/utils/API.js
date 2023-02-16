@@ -1,10 +1,16 @@
 import axios from "axios"
 
+const accessToken = JSON.parse(localStorage.getItem("userModel")).token.access
+
+const headers = {
+  Authorization: `Bearer ${accessToken}`
+}
+
 const ROOTURL = "http://127.0.0.1:8000/api/"
 
 // defining method
 const get = (path) => {
-  return axios.get(`${ROOTURL}${path}`).then((response) => {
+  return axios.get(`${ROOTURL}${path}`, {headers}).then((response) => {
     if (response.error_code === 403) return { success: false, error_code: 403 }
     else {
       return response
@@ -17,7 +23,7 @@ const get = (path) => {
 
 const post = (path, body) => {
   return axios
-    .post(`${ROOTURL}${path}`, body)
+    .post(`${ROOTURL}${path}`, body, {headers})
     .then((response) => {
       if (response.error_code === 403) return { success: false, error_code: 403 }
       else {
@@ -31,7 +37,7 @@ const post = (path, body) => {
 
 const put = (path, body) => {
     return axios
-      .put(`${ROOTURL}${path}`, body)
+      .put(`${ROOTURL}${path}`, body, {headers})
       .then((response) => {
         if (response.error_code === 403) return { success: false, error_code: 403 }
         else {
@@ -45,7 +51,7 @@ const put = (path, body) => {
 
   const deleteApi = (path, body) => {
     return axios
-      .delete(`${ROOTURL}${path}`, body)
+      .delete(`${ROOTURL}${path}`, {headers})
       .then((response) => {
         if (response.error_code === 403) return { success: false, error_code: 403 }
         else {

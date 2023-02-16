@@ -9,25 +9,14 @@ const UpdateModal = (props) => {
     }
 
     const handleUpdate = () => {
-        console.log(props.todoId);
-        API("get", `todos/${props.todoId}`)
-        .then((response) => {
-            setTodoData(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-
-        const todo = {
-            title: todoData.title,
-            description: todoData.description,
-            isComplete: true,
-            deadline: todoData.deadline
+        const updatedTodo = {
+            isComplete: true
         }
 
-        API("put", `todos/${props.todoId}`, todo)
+        API("put", `todos/${props.todoId}/`, updatedTodo)
         .then((response) => {
             console.log(response);
+            window.location.reload();
         })
         .catch((error) => {
             console.log(error);

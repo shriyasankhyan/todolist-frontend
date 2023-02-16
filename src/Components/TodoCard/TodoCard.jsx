@@ -21,7 +21,7 @@ const TodoCard = (props) => {
 
   const handleUpdate = () => {
     if(props.status === true){
-      window.alert("This todo is completed, you can't modify this.")
+      window.alert("This todo is completed already, you can't modify this.")
     }
     else{
       setUpdateModal(!updateModal);
