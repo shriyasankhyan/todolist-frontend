@@ -2,15 +2,34 @@ import React, { useState } from "react";
 import "./Login.scss";
 import Header from "../../Components/Header/Header";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault();
     if (email.length > 0 && password.length > 0) {
-      window.alert("Submitted");
+      try {
+         {
+            const config = {
+                headers: {
+                    "Content-type": "application/json",
+                },
+            };
+            const { data } = await axios.post("http://127.0.0.1:8000/api/user/login/",
+                { email, password },
+                config
+            );
+
+            localStorage.setItem("userModel", JSON.stringify(data));
+            navigate('./user');
+        }
+      } catch (err) {
+        window.alert("Fill the correct details.");
+      }
     } else {
       window.alert("Please fill all the fields.");
     }
